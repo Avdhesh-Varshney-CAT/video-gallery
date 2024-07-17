@@ -6,6 +6,7 @@ def login():
   st.subheader("Welcome Back!")
   st.markdown("Please enter your username/email and password to log in.")
 
+  # Input fields for username/email and password
   user = st.text_input("👤 Username/Email:")
   password = st.text_input("🔑 Password:", type="password")
 

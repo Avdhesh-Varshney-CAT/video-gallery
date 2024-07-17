@@ -10,3 +10,4 @@ def check_password(password, hashed_password):
     return ph.verify(hashed_password, password)
   except:
     return False
+

@@ -1,42 +1,20 @@
 import streamlit as st
 
 def dashboard():
-	st.title("Jarvis - A Virtual AI Assistant!")
+	st.title("Welcome to the Streamlit Videos World!")
 
-	st.write('''
-		Jarvis is a simple Python program that can be used to control your computer using voice commands. The program can perform a variety of tasks, such as opening websites, playing music, searching Wikipedia, getting the time, opening code editors, and sending emails.
-	''')
+	st.write("This is a simple Streamlit app that showcases videos from different websites. You can watch videos, download them, visit the website, and watch more videos from the website.")
 
-	st.markdown('''
-		### The objectives of Jarvis
-		- To create a simple Python program.
-		- To control a computer using voice commands.
-		- Perform a variety of tasks,
-			- Opening websites
-			- Playing music
-			- Searching Wikipedia
-			- Getting the time
-			- Opening code editors
-			- Sending emails, etc.
-		### Required Libraries
-	''')
+	st.write("To get started, you can log in or sign up to access the dashboard. If you are already logged in, you can view your profile and log out.")
 
-	st.code('''
-		argon2-cffi
-		jupyterlab
-		keras
-		notebook
-		numpy
-		pandas
-		pillow
-		pyperclip
-		python-barcode		
-		pyttsx3
-		requests
-		setuptools
-		SpeechRecognition
-		streamlit
-		tensorflow
-	''')
+	st.write("You can also view videos from different websites by clicking on the respective links in the sidebar.")
+
+	st.write("Enjoy watching videos!")
+
+	st.write("Note: This app is for educational purposes only and does not host any videos.")
+
+	st.markdown("You can also access vercel website: [click](https://main-gallery.vercel.app/)")
+
+	st.info("Made with ❤️ by Avdhesh", icon="ℹ️")
 
 dashboard()
