@@ -7,9 +7,9 @@ from utils.randomColor import randomColor
 from utils.downloadVideo import downloadVideo
 
 WEBSITE_NAME = 'Brazzers'
+LIMIT = 1
 
 # Global variables
-LIMIT = st.session_state.LIMIT
 DATA = st.session_state.videos_data
 WEBSITE_COUNTS = st.session_state.WEBSITE_COUNTS
 startIndex = 0
