@@ -13,7 +13,7 @@ def jsonUpdate():
         print("Error decoding JSON.")
         return
 
-    json_data = {}
+    json_data = []
     for i in range(len(data)):
         dic = {
             "ID": data[str(i)]["ID"],
@@ -24,16 +24,16 @@ def jsonUpdate():
             "tags": data[str(i)]['tags'],
             "iFrameURL": data[str(i)]["iFrameURL"],
             "videoURL": data[str(i)]["videoURL"],
-            "downloadURL": "",
+            "downloadURL": data[str(i)]['downloadURL'],
             "websiteName": data[str(i)]["websiteName"],
             "websiteURL": data[str(i)]["websiteURL"],
         }
-        json_data[i] = dic
+        json_data.append(dic)
 
-    print(json_data[0])
+    # print(json_data[0])
 
-    # with open(FILE_PATH, 'w') as f:
-    #     json.dump(json_data, f, indent=2)
+    with open(FILE_PATH, 'w') as f:
+        json.dump(json_data, f, indent=2)
 
 if __name__ == '__main__':
     jsonUpdate()

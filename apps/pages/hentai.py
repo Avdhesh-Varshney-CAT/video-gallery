@@ -2,6 +2,7 @@ import streamlit as st
 import webbrowser
 
 # Importing the helper functions
+from data.loadData import loadData
 from utils.calculateTime import calculateTime
 from utils.randomColor import randomColor
 from utils.downloadVideo import downloadVideo
@@ -10,17 +11,15 @@ WEBSITE_NAME = 'Hentai'
 LIMIT = 1
 
 # Global variables
-DATA = st.session_state.videos_data
-WEBSITE_COUNTS = st.session_state.WEBSITE_COUNTS
+DATA = loadData(WEBSITE_NAME)
 startIndex = 0
 lastIndex = min(LIMIT, len(DATA))
 
 st.title(f"Watch Awesome Videos from {WEBSITE_NAME}")
-for i in range(startIndex, lastIndex):
-    item = DATA[str(i)]
+for item in DATA:
 
     if item['websiteName'] == WEBSITE_NAME and item['iFrameURL'] != "":
-        st.write(f"#### Featured Video {item['ID']}")
+        st.write(f"#### Featured Video No. {item['ID']}")
 
         if item['imageURL'] != "":
             st.image(item['imageURL'], caption=item['name'], use_column_width=True)
@@ -52,7 +51,7 @@ for i in range(startIndex, lastIndex):
         with col6:
             st.button("More Videos", on_click=lambda url=item['websiteURL']: webbrowser.open_new_tab(url), key=item['iFrameURL'])
 
-if WEBSITE_NAME in WEBSITE_COUNTS and LIMIT < WEBSITE_COUNTS[WEBSITE_NAME]:
+if LIMIT < len(DATA):
     if st.button("Load More"):
         startIndex = lastIndex
         lastIndex = min(startIndex + LIMIT, len(DATA))
