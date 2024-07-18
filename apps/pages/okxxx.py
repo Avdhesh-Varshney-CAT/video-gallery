@@ -8,7 +8,7 @@ from utils.randomColor import randomColor
 from utils.downloadVideo import downloadVideo
 
 # Global variables
-WEBSITE_NAME = 'Brazzers'
+WEBSITE_NAME = 'OkXXX'
 DATA = loadData(WEBSITE_NAME)
 
 st.title(f"Watch Awesome Videos from {WEBSITE_NAME}")
