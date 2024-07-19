@@ -1,8 +1,6 @@
 import json
 
-FILE_PATH = './data/data.json'
-
-def jsonUpdate():
+def jsonUpdate(FILE_PATH):
     try:
         with open(FILE_PATH, 'r') as f:
             data = json.load(f)
@@ -17,16 +15,16 @@ def jsonUpdate():
     for i in range(len(data)):
         dic = {
             "ID": data[i]["ID"],
+            "category": data[i]["category"],
             "name": data[i]["name"],
+            "timeStamp": data[i]["timeStamp"],
             "boyName": data[i]['boyName'],
             "girlName": data[i]['girlName'],
-            "imageURL": data[i]["imageURL"],
-            "timeStamp": data[i]["timeStamp"],
             "tags": data[i]['tags'],
+            "imageURL": data[i]["imageURL"],
             "iFrameURL": data[i]["iFrameURL"],
             "videoURL": data[i]["videoURL"],
             "downloadURL": data[i]['downloadURL'],
-            "websiteName": data[i]["websiteName"],
             "websiteURL": data[i]["websiteURL"],
         }
         json_data.append(dic)
@@ -37,4 +35,15 @@ def jsonUpdate():
     #     json.dump(json_data, f, indent=2)
 
 if __name__ == '__main__':
-    jsonUpdate()
+    FILE_PATH_1 = './data/acg.json'
+    FILE_PATH_2 = './data/lam.json'
+
+    print(f'1: {FILE_PATH_1}')
+    print(f'2: {FILE_PATH_2}')
+
+    choose = int(input(f'\nWhich file you want to update? (1 or 2): '))
+
+    if choose == 1:
+        jsonUpdate(FILE_PATH_1)
+    else:
+        jsonUpdate(FILE_PATH_2)

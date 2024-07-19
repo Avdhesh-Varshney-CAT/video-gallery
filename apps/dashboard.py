@@ -1,20 +1,62 @@
 import streamlit as st
 
 def dashboard():
-	st.title("Welcome to the Streamlit Videos World!")
+    st.set_page_config(page_title="Streamlit Videos World", page_icon="🌍")
+    st.markdown("<h1 style='text-align: center;'>🎥 Welcome to the Streamlit Videos World! 🌍</h1>", unsafe_allow_html=True)
 
-	st.write("This is a simple Streamlit app that showcases videos from different websites. You can watch videos, download them, visit the website, and watch more videos from the website.")
+    st.markdown("""
+    <p style='font-size: 18px;'>
+        This is a simple Streamlit app that showcases videos from different websites. 
+        You can watch videos, download them, visit the website, and watch more videos from the website.
+    </p>
+    """, unsafe_allow_html=True)
 
-	st.write("To get started, you can log in or sign up to access the dashboard. If you are already logged in, you can view your profile and log out.")
+    st.markdown("""
+    <div>
+        <p>🔐 To get started, you can log in or sign up to access the dashboard.</p>
+        <p>👤 If you are already logged in, you can view your profile and log out.</p>
+        <p>🎬 You can also view videos from different categories by clicking on the respective links in the sidebar.</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-	st.write("You can also view videos from different websites by clicking on the respective links in the sidebar.")
+    st.markdown("""
+    <h2>✨ All the Categories are: ✨</h2>
+    <h5>✨ Animations, Cartoons & Graphics ✨</h5>
+    <ul style='list-style-type: none;'>
+        <li>🔞 Hentai</li>
+    </ul>
 
-	st.write("Enjoy watching videos!")
+    <h5>✨ Live Action Movies ✨</h5>
+    <ul style='list-style-type: none;'>
+        <li>🔪 Brutal</li>
+        <li>👩‍❤️‍👨 Cheat</li>
+        <li>👨‍👩‍👧 Family</li>
+        <li>🧹 Maid</li>
+        <li>🏫 School</li>
+        <li>👩‍💼 Secretary</li>
+        <li>👩‍❤️‍👨 Sister</li>
+        <li>👦 StepBrother</li>
+        <li>👩🏻‍🦰 StepMom</li>
+        <li>👩🏻‍🦰 StepSister</li>
+        <li>👤 Stranger</li>
+        <li>🦺 Stuck</li>
+    </ul>
+    <hr />
+    """, unsafe_allow_html=True)
 
-	st.write("Note: This app is for educational purposes only and does not host any videos.")
+    st.markdown("<p style='text-align: center; font-size: 18px;'>Enjoy watching videos! 🍿</p>", unsafe_allow_html=True)
+    st.markdown("""
+    <p style='text-align: center; color: gray;'>
+        Note: This app is for personnel purposes only and does not advertisement any videos.
+    </p>
+    """, unsafe_allow_html=True)
 
-	st.markdown("You can also access vercel website: [click](https://main-gallery.vercel.app/)")
-
-	st.info("Made with ❤️ by Avdhesh", icon="ℹ️")
+    st.markdown("""
+    <p style='text-align: center;'>
+        You can also access the Vercel website: 
+        <a href='https://main-gallery.vercel.app/' target='_blank'>click here</a> 🌐
+    </p>
+    """, unsafe_allow_html=True)
+    st.markdown("""<p style='text-align: center;'>Made with ❤️ by Lucky</p>""", unsafe_allow_html=True)
 
 dashboard()

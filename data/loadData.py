@@ -2,13 +2,13 @@ import streamlit as st
 import json
 
 @st.cache_data
-def loadData(websiteName):
+def loadData(category, file_path):
     try:
-        with open('./data/data.json') as f:
+        with open(file_path) as f:
             data = json.load(f)
             FILTERED_DATA = []
             for item in data:
-                if item['websiteName'] == websiteName:
+                if item['category'] == category:
                     FILTERED_DATA.append(item)
     except FileNotFoundError:
         st.error("JSON file not found.")
