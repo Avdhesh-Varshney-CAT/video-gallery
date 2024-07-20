@@ -40,16 +40,34 @@ def showVideos(CATEGORY, FILE_PATH):
 
         col5, col6, col7, col8 = st.columns(4)
         with col5:
-            st.button("▶️ Watch Instantly", on_click=lambda url=item['iFrameURL']: webbrowser.open_new_tab(url), key=f"watch_{item['ID']}")
+            if item['iFrameURL'] != "":
+                st.markdown(f"""
+                    <a href="{item['iFrameURL']}" target="_blank">
+                        <button style="padding: 10px; width: 100%; border-radius: 10px; background-color: transparent; border: 1px solid salmon;">▶️ Watch Instantly</button>
+                    </a>
+                """, unsafe_allow_html=True)
+
         with col6:
-            if st.button("⬇️ Download Video", key=f"download_{item['ID']}_{item['name']}") and item['downloadURL'] != "":
+            if item['videoURL'] != "":
+                st.markdown(f"""
+                    <a href="{item['videoURL']}" target="_blank">
+                        <button style="padding: 10px; width: 100%; border-radius: 10px; background-color: transparent; border: 1px solid salmon;">📺 Full Video</button>
+                    </a>
+                """, unsafe_allow_html=True)
+
+        with col7:
+            if item['websiteURL'] != "":
+                st.markdown(f"""
+                    <a href="{item['websiteURL']}" target="_blank">
+                        <button style="padding: 10px; width: 100%; border-radius: 10px; background-color: transparent; border: 1px solid salmon;">🔍 More Videos</button>
+                    </a>
+                """, unsafe_allow_html=True)
+
+        with col8:
+            if item['downloadURL'] != "":
                 file_name = downloadVideo(item['downloadURL'])
                 if file_name:
                     with open(file_name, "rb") as file:
-                        st.download_button(label="Download", data=file, file_name=file_name, key=f"download_btn_{item['ID']}_{item['timeStamp']}")
-        with col7:
-            st.button("📺 Full Video", on_click=lambda url=item['videoURL']: webbrowser.open_new_tab(url), key=f"full_{item['ID']}_{item['imageURL']}")
-        with col8:
-            st.button("🔍 More Videos", on_click=lambda url=item['websiteURL']: webbrowser.open_new_tab(url), key=f'more_{item["ID"]}_{INDEX}')
+                        st.download_button(label="⬇️ Download Video", data=file, file_name=file_name, key=f"download_btn_{item['ID']}_{item['timeStamp']}")
 
         INDEX += 1
